@@ -33,6 +33,7 @@ export async function generateMetadata({
     };
   } else {
     const metaTitle = data?.metaTitle ?? data?.title;
+    const imageUrl = `${baseUrl}/blogs/${data.title}/og`;
 
     return {
       title: metaTitle,
@@ -45,14 +46,16 @@ export async function generateMetadata({
         title: metaTitle,
         description: data?.metaDescription,
         siteName: "機械工具買取ハディズ",
-        images: [{ url: `${data?.imageSrc}` }],
+        images: [
+          { url: imageUrl, width: 1200, height: 630, alt: data?.title },
+        ],
       },
 
       twitter: {
         card: "summary_large_image",
         title: metaTitle,
         description: data?.metaDescription,
-        images: `${data?.imageSrc}`,
+        images: imageUrl,
       },
 
       alternates: {
@@ -77,7 +80,7 @@ export default async function BlogDetailsPage({ params }: IBlogPage) {
       <ArticleSchema
         title={data.title}
         description={data.metaDescription}
-        image={data.imageSrc}
+        image={`${baseUrl}/blogs/${data.title}/og`}
         datePublished={data.date}
         url={`${baseUrl}/blogs/${data.title}`}
       />

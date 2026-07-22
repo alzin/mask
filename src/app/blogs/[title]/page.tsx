@@ -32,15 +32,17 @@ export async function generateMetadata({
       title: "Blog Not Found",
     };
   } else {
+    const metaTitle = data?.metaTitle ?? data?.title;
+
     return {
-      title: data?.title,
+      title: metaTitle,
       description: data?.metaDescription,
       // keywords: "",
 
       openGraph: {
         type: "article",
         url: `${baseUrl}/blogs/${data?.title}`,
-        title: data?.title,
+        title: metaTitle,
         description: data?.metaDescription,
         siteName: "機械工具買取ハディズ",
         images: [{ url: `${data?.imageSrc}` }],
@@ -48,7 +50,7 @@ export async function generateMetadata({
 
       twitter: {
         card: "summary_large_image",
-        title: data?.title,
+        title: metaTitle,
         description: data?.metaDescription,
         images: `${data?.imageSrc}`,
       },

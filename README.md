@@ -72,11 +72,11 @@ Update this value if the production domain changes.
 | SEO | Next.js Metadata API, sitemap, robots, JSON-LD schema components |
 | UI helpers | Swiper, SweetAlert2, Lucide React |
 | Analytics | Google Tag Manager |
-| Runtime target | Node.js 20.x |
+| Runtime target | Node.js 24.x |
 
 ## Requirements
 
-- Node.js `20.x.x`
+- Node.js `24.x`
 - npm
 - SMTP account credentials for inquiry email delivery
 - Google Maps API key for the factory-service map
